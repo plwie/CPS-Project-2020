@@ -125,4 +125,3 @@ function updateCartItem() {
         return [title,quantity]
     }
 }
-
