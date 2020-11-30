@@ -1,4 +1,4 @@
-// -----------------------------> For Customer <----------------------------------
+// -----------------------------> Font-end <----------------------------------
 
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
@@ -31,17 +31,17 @@ function ready() {
 function purchaseClicked() {
     alert("Your order has been sent to chef, Thank you!")
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var tabID = document.getElementsByClassName('tableid-input')[0].innerText
+    var tabID = document.getElementsByClassName('tableid-input')[0]
+    var table = tabID.value
     var item = []
     while (cartItems.hasChildNodes()){
         item.push(updateCartItem())
         cartItems.removeChild(cartItems.firstChild)
     }
-    var order = [tabID,item]
+    var order = {"table" : table, "menu" : item}
     console.log(order)
-    localStorage.setItem('order',JSON.stringify(order))
+    ws.send(JSON.stringify(order))
     updateCartTotal()
-    updateCartItem()
 }
 
 function removeCartItem(event) {
@@ -57,6 +57,7 @@ function quantityChanged(event) {
     }
     updateCartTotal()
 }
+
 
 function addToCartClicked(event) {
     var button = event.target
@@ -116,10 +117,11 @@ function updateCartItem() {
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('฿', ''))
+        var titleElement = cartRow.getElementsByClassName('cart-item-title')[0]
+        var title = titleElement.innerText
         var quantity = quantityElement.value
-        return [price,quantity]
+        return [{Name : title},{Quantity : quantity}];
     }
 }
+
