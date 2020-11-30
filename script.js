@@ -30,16 +30,18 @@ function ready() {
 
 function purchaseClicked() {
     alert("Your order has been sent to chef, Thank you!")
+    var tabSec  = document.getElementsByClassName('section-header')[0]
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var tabID = document.getElementsByClassName('tableid-input')[0].innerText
+    var tabID = tabSec.getElementsByClassName('tableid-input')[0]
+    var table = parseFloat(tabID.innerText)
     var item = []
     while (cartItems.hasChildNodes()){
         item.push(updateCartItem())
         cartItems.removeChild(cartItems.firstChild)
     }
-    var order = [tabID,item]
+    var order = [table,item]
     console.log(order)
-    localStorage.setItem('order',JSON.stringify(order))
+    // localStorage.setItem('order',JSON.stringify(order))
     updateCartTotal()
     updateCartItem()
 }
@@ -116,10 +118,10 @@ function updateCartItem() {
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('฿', ''))
+        var titleElement = cartRow.getElementsByClassName('cart-item-title')[0]
+        var title = titleElement.innerText
         var quantity = quantityElement.value
-        return [price,quantity]
+        return [title,quantity]
     }
 }
