@@ -1,0 +1,341 @@
+/* ------------------------------------------------------> Background part <-------------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: auto;
+}
+
+html,
+ body {
+   font-family: 'Roboto', 'Helvetica', sans-serif;
+   margin: 0px;
+   padding: 0px;
+   background-color: #E2E0E5;
+   height: 100%;
+ }
+
+.wrapper {
+    margin: 0 auto;
+}
+
+nav{
+    background-color: #3B945E;
+    width: 100%;
+    height: 100px;
+    margin: auto;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    line-height: 100px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-family: "Copperplate";
+    font-size: 100;
+    font-style: initial;
+    font-weight: 500;
+    text-shadow: 5px 5px 5px #4fcec7;
+    color: #EDF5E1;
+    opacity: 1.3;
+    margin: auto;
+}
+
+
+
+ul li b:hover{
+    color: #F64C72;
+}
+
+ul s {
+    display: block;
+    text-decoration: none;
+    font-size: 50;
+    font-family: "Courier New";
+    font-weight: 550;
+    font-style: oblique;
+    color: #E27D60;
+    padding: 0 50px;
+    padding-top: 0px;
+    opacity: 1.3;
+}
+
+ul a {
+    display: block;
+    text-decoration: none;
+    font-size: 25;
+    font-family: "Courier New";
+    font-style: oblique;
+    color: #F64C72;
+    opacity: 1.3;
+}
+
+ul b {
+    display: block;
+    text-decoration: none;
+    font-family: "Courier New";
+    font-style: oblique;
+    font-size: 20;
+    color: Black;
+    padding: 0px;
+    opacity: 1.3;
+}
+
+
+
+hr {
+    width: 100%;
+    background-color: #57BA98;
+    height: 30px;
+    border: 0;
+}
+
+/* ----------------------------------------> Customer part <------------------------------------------- */
+
+.menu {
+    padding: 20px;
+    height: 250px; 
+    width: 200px;
+    height: 150px;
+    border-style: groove;
+    border-color: goldenrod;
+}
+
+.inline-block {
+    display: inline-block;
+    padding-left: 6%;
+    padding-top: 50px;
+}
+
+.left {
+    float: left;
+}
+
+.leftimg {
+    float: left;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+.right {
+    float: right;
+    padding-right: 4%;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    width: 250px;
+    height: 200px;
+    border-style: groove;
+    border-color: goldenrod;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: #333;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.section-header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.tableid-input {
+    align-self: start;
+    height: 35px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #E2E0E5;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+    margin-right: 25px;
+}
+
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+/* ----------------------------------------------------> Chef Part <---------------------------------------------------------- */
+
+.order-box {
+    margin: 30px;
+    border: 3px solid red ;
+    width: max-content;
+    height: fit-content;
+}
+
+.ordered {
+    margin: 30px;
+    width: max-content;
+    height: fit-content;
+}
+
+.ordered-table {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.ordered-detail {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.testbtn {
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
