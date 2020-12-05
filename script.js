@@ -1,9 +1,23 @@
-// -----------------------------> For Customer <----------------------------------
+// -----------------------------> Font-end <----------------------------------
 
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     ready()
+}
+
+function sendData(event){
+    $.ajax({
+    url: `http://localhost:3000/ajax`,
+    type: "POST",
+    processData:false,
+    dataType: "json",
+    cache: false,
+    data: JSON.stringify(event),
+    success: function (event) {
+        console.log(JSON.stringify(event))
+        },
+    });
 }
 
 function ready() {
@@ -31,17 +45,16 @@ function ready() {
 function purchaseClicked() {
     alert("Your order has been sent to chef, Thank you!")
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var tabID = document.getElementsByClassName('tableid-input')[0].innerText
+    var tabID = document.getElementsByClassName('tableid-input')[0]
+    var table = tabID.value
     var item = []
     while (cartItems.hasChildNodes()){
         item.push(updateCartItem())
         cartItems.removeChild(cartItems.firstChild)
     }
-    var order = [tabID,item]
+    var order = {"table":table,"menu":item}
+    sendData(order)
     console.log(order)
-    localStorage.setItem('order',JSON.stringify(order))
-    updateCartTotal()
-    updateCartItem()
 }
 
 function removeCartItem(event) {
@@ -57,6 +70,7 @@ function quantityChanged(event) {
     }
     updateCartTotal()
 }
+
 
 function addToCartClicked(event) {
     var button = event.target
@@ -116,10 +130,10 @@ function updateCartItem() {
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('฿', ''))
+        var titleElement = cartRow.getElementsByClassName('cart-item-title')[0]
+        var title = titleElement.innerText
         var quantity = quantityElement.value
-        return [price,quantity]
+        return [{Name : title},{Quantity : quantity}];
     }
 }
