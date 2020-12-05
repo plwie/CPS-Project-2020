@@ -1,0 +1,156 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu application</title>
+    <link rel="stylesheet" href="indexStyle.css">
+</head>
+<body>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAj8fCYB9e4n2egu8xXN5m4P160uluDGBw",
+        authDomain: "cps-chef.firebaseapp.com",
+        databaseURL: "https://cps-chef.firebaseio.com",
+        projectId: "cps-chef",
+        storageBucket: "cps-chef.appspot.com",
+        messagingSenderId: "1075786229768",
+        appId: "1:1075786229768:web:6c698b7258168b313dc9bd"
+    }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+
+    const db = firebase.database()
+
+    db.ref('runningOrderId').on('value', (snapshot) => {
+        runningOrderId = snapshot.val()
+    })
+
+    let runningOrderId = 1
+
+</script>
+<script src="script.js"></script>
+
+<nav>
+    <div class="wrapper">
+        <ul>
+            <s>
+                <center>
+                    <li><a>Menus</a></li>
+                </center>
+            </s>
+        </ul>
+    </div>
+</nav>
+<hr>
+</div>
+<main>
+    <br>
+    <ul>
+        <section class="content-section">
+            <div class="left">
+                <s>Today's Recommeded!!</s>
+            </div>
+            <div class="right"><a href="chef.html"><img src="https://image.flaticon.com/icons/png/512/129/129226.png"
+                                                        width="35px" height="35px"></a></div>
+            <div style="clear: both;"></div>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Pizza</span>
+                    <img class="shop-item-image"
+                         src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F1563392585%2Fpepperoni-skillet-pizza-1907.jpg%3Fitok%3Dl_08ukf0">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">300฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Spaghetti</span>
+                    <img class="shop-item-image"
+                         src="https://www.culinaryhill.com/wp-content/uploads/2020/03/Spaghetti-Carbonara-Recipe-Square-Culinary-Hill.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">220฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Beef Steak</span>
+                    <img class="shop-item-image"
+                         src="https://www.cookingclassy.com/wp-content/uploads/2019/07/steak-marinade-12.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">400฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Tomato soup</span>
+                    <img class="shop-item-image"
+                         src="https://iowagirleats.com/wp-content/uploads/2014/11/Italian-Sausage-and-Vegetable-Soup-iowagirleats-Featured.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">120฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Risotto</span>
+                    <img class="shop-item-image"
+                         src="https://www.coles.com.au/content/dam/coles/inspire-create/images/128.oven-baked-mushroom-risotto-with-pesto.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">170฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Salad</span>
+                    <img class="shop-item-image"
+                         src="https://www.cookingclassy.com/wp-content/uploads/2019/11/best-salad-7.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">100฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Tiramisu</span>
+                    <img class="shop-item-image"
+                         src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371597326801.jpeg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">180฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Galvanina</span>
+                    <img class="shop-item-image" src="https://www.neogroup.co.za/media/catalog/category/food.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">150฿</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+        </section>
+        <section class="content-section">
+            <h2 class="section-header">Table <input class="tableid-input" type="number" id="tableid" name="tableid"
+                                                    min="1" max="9"></h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+    </ul>
+</main>
+</div>
+</body>
+</html>
